@@ -1,0 +1,23 @@
+
+Descrição:	
+Desenvolver um programa em Java que permita efetuar operações com polinómios. Um polinómio é constituído por termos. Cada termo tem um coeficiente (um número real) e um expoente (um número inteiro).
+
+Por exemplo, o polinómio 5x4 - 3x2 + 6x + 9 tem 4 termos (5x4, -3x2, 6x e 9). O termo 5x4 tem coeficiente 5 e expoente 4. O termo -3x2 tem coeficiente -3 e expoente 2. O termo 6x tem coeficiente 6 e expoente 1. O termo 9, tem coeficiente 9 e expoente 0. O polinómio é de ordem 4.
+
+O polinómio será representado em memória por uma lista ligada em que cada nó da lista referencia um objeto que representa um termo do polinómio (guardando o coeficiente e o expoente respetivos).
+
+O programa deverá permitir fazer o seguinte:
+
+- Criar um novo termo do polinómio;
+
+- Remover um termo, dada a sua ordem (expoente);
+
+- Escrever o polinómio (usar um método recursivo);
+
+- Indicar o grau do polinómio;
+
+- Indicar o número de termos do polinómio;
+
+- Ordenar o polinómio por ordem decrescente do expoente (não usar o algoritmo Selection Sort);
+
+- Calcular o valor do polinómio para um dado valor de x.

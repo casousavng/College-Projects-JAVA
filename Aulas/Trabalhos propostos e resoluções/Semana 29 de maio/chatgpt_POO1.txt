@@ -1,0 +1,56 @@
+public class Exercicio5 {
+    public static void main(String[] args) {
+        ConstroiRetangulo construtor = new ConstroiRetangulo();
+        construtor.calcularMedidas();
+    }
+}
+
+class Retangulo {
+    private double x1, y1, x2, y2;
+
+    public Retangulo() {
+        // Construtor sem parâmetros
+    }
+
+    public Retangulo(double x1, double y1, double x2, double y2) {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
+    }
+
+    public double calcularBase() {
+        return Math.abs(x2 - x1);
+    }
+
+    public double calcularAltura() {
+        return Math.abs(y2 - y1);
+    }
+
+    public double calcularPerimetro() {
+        double base = calcularBase();
+        double altura = calcularAltura();
+        return 2 * base + 2 * altura;
+    }
+
+    public double calcularArea() {
+        double base = calcularBase();
+        double altura = calcularAltura();
+        return base * altura;
+    }
+}
+
+class ConstroiRetangulo {
+    public void calcularMedidas() {
+        Retangulo retangulo = new Retangulo(2.0, 1.0, 4.0, 5.0);
+        double base = retangulo.calcularBase();
+        double altura = retangulo.calcularAltura();
+        double perimetro = retangulo.calcularPerimetro();
+        double area = retangulo.calcularArea();
+
+        System.out.println("Base: " + base);
+        System.out.println("Altura: " + altura);
+        System.out.println("Perímetro: " + perimetro);
+        System.out.println("Área: " + area);
+    }
+}

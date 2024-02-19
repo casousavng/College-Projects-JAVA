@@ -1,0 +1,41 @@
+Classe Pessoa do projeto "Exercicio1":
+
+**************************************
+
+class Pessoa{
+
+      String nome;
+
+      char genero;
+
+      int idade;
+
+      public Pessoa(){
+
+      }
+
+      public Pessoa( String nome, char genero ){
+
+            this.nome = nome;
+
+            this.genero = genero;
+
+      }
+
+      public Pessoa( String nome, char genero, int idade ){
+
+            this.nome = nome;
+
+            this.genero = genero;
+
+            this.idade = idade;
+
+      }
+
+      void falar(){
+
+            System.out.println( "Blá, Blá, Blá, ...");
+
+      }
+
+}

@@ -1,0 +1,11 @@
+Programming languages share properties with natural languages related to their purpose as vehicles for communication, 
+having a syntactic form separate from its semantics, and showing language families of related languages branching one 
+from another. But as artificial constructs, they also differ in fundamental ways from languages that have evolved 
+through usage. A significant difference is that a programming language can be fully described and studied in its entirety 
+since it has a precise and finite definition. By contrast, natural languages have changing meanings given by their 
+users in different communities. While constructed languages are also artificial languages designed from the ground up 
+with a specific purpose, they lack the precise and complete semantic definition that a programming language has.
+Many programming languages have been designed from scratch, altered to meet new needs, and combined with other languages. 
+Many have eventually fallen into disuse. Although there have been attempts to design one universal programming language 
+that serves all purposes, all of them have failed to be generally accepted as filling this role. 
+The need for diverse programming languages arises from the diversity of contexts in which languages are used.
