@@ -45,15 +45,31 @@ public class Data {
         this.dia = dia;
     }
     
-    public int diasDoMes (int mes){
+    public int diasDoMes (int mes, int ano){
         
         int dias = 0;
         
-        dias = switch (mes) {
-            case 0 -> 0;
-            case 2 -> 28;
-            case 1, 3, 5, 7, 8, 10, 12 -> 31;
-            default -> 30;
+        switch (mes) {
+            case 0:
+                dias = 0;
+                break;
+            case 2:
+                if((ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0))){
+                    dias = 29;
+                }
+		
+                else{
+                    dias = 28;
+                    }
+		
+                
+                break;
+            case 1, 3, 5, 7, 8, 10, 12:
+                dias = 31;
+                break;
+            default:
+                dias = 30;
+                break;
         };
         return dias;
 
@@ -71,19 +87,19 @@ public class Data {
         if (this.ano == 1900){
             for(int i = 1; i < this.mes; this.mes--){
                 
-                total += diasDoMes(this.mes-1);
+                total += diasDoMes(this.mes-1, this.ano);
                 System.out.println(total);
                 
             }
-            contaDias = (total + this.dia);
+            contaDias = (total + (this.dia)) - 1; // -1 remove o proprio dia
         }
             
-        else
+        else {
             for(int i = 1; i < this.mes; this.mes--){
-                total += diasDoMes(this.mes);  
+                total += diasDoMes(this.mes, this.ano);  
             }
             contaDias = ((this.ano - 1900) * 365) + (total + this.dia);
-        
+        }
 
         return contaDias;
     }

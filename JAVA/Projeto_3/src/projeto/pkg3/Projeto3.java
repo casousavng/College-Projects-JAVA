@@ -12,7 +12,7 @@ public class Projeto3 {
     public static void main(String[] args) {
         
 
-        Data teste1 = new Data(1,2,1900);
+        Data teste1 = new Data(10,4,1905);
         
         
         System.out.println("(DATA de inicio por defeito 01/01/1900)");
