@@ -7,7 +7,7 @@ public class Data {
     private int mes;
     private int dia; 
 
-    public Data(int ano, int mes, int dia) {
+    public Data(int dia, int mes, int ano) {
         this.ano = ano;
         this.mes = mes;
         this.dia = dia;
@@ -50,6 +50,7 @@ public class Data {
         int dias = 0;
         
         dias = switch (mes) {
+            case 0 -> 0;
             case 2 -> 28;
             case 1, 3, 5, 7, 8, 10, 12 -> 31;
             default -> 30;
@@ -58,21 +59,18 @@ public class Data {
 
     }
     
-    public int numDiasOcorridos(){
-        
-        int dias = 0;
-        int contar = 0;
-        int total = 0;
-        
-        for (int i = 1; i <= this.ano-1900; i++){
-            Data A = new Data (1,1,i);
-            contar++;
-            
+    // Método para retornar o número de dias desde a data de referência 01/01/1900
+    public int contaDias(){
+        int qtdDias = 0, anos = 1;
+        for(int i = 0; i < this.ano-1900; i++){
+            anos++; // conta os anos
         }
+
+        qtdDias = (anos * 365) - (diasDoMes(this.mes) - this.dia); // estes 2 dias a mais é o primeiro e o último
         
-       dias = (contar * 365) - (diasDoMes(this.mes) - this.dia);
-        
-        return dias;
+        System.out.println(anos * 365);
+
+        return qtdDias;
     }
 
     @Override

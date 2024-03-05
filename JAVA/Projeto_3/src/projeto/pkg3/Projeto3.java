@@ -12,9 +12,10 @@ public class Projeto3 {
     public static void main(String[] args) {
         
         Data teste = new Data();
+        Data teste2 = new Data(1,2,1900);
         
-        System.out.println(teste);
-        
+        System.out.println(teste2);
+        System.out.println(teste2.contaDias());
         
     }
 
