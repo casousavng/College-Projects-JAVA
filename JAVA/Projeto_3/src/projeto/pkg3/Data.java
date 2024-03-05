@@ -61,16 +61,31 @@ public class Data {
     
     // Método para retornar o número de dias desde a data de referência 01/01/1900
     public int contaDias(){
-        int qtdDias = 0, anos = 1;
+        
+        int contaDias = 0, anos = 0, total= 0;
+        
         for(int i = 0; i < this.ano-1900; i++){
             anos++; // conta os anos
         }
-
-        qtdDias = (anos * 365) - (diasDoMes(this.mes) - this.dia); // estes 2 dias a mais é o primeiro e o último
         
-        System.out.println(anos * 365);
+        if (this.ano == 1900){
+            for(int i = 1; i < this.mes; this.mes--){
+                
+                total += diasDoMes(this.mes-1);
+                System.out.println(total);
+                
+            }
+            contaDias = (total + this.dia);
+        }
+            
+        else
+            for(int i = 1; i < this.mes; this.mes--){
+                total += diasDoMes(this.mes);  
+            }
+            contaDias = ((this.ano - 1900) * 365) + (total + this.dia);
+        
 
-        return qtdDias;
+        return contaDias;
     }
 
     @Override

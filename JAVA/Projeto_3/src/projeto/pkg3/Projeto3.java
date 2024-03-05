@@ -11,11 +11,13 @@ public class Projeto3 {
     
     public static void main(String[] args) {
         
-        Data teste = new Data();
-        Data teste2 = new Data(1,2,1900);
+
+        Data teste1 = new Data(1,2,1900);
         
-        System.out.println(teste2);
-        System.out.println(teste2.contaDias());
+        
+        System.out.println("(DATA de inicio por defeito 01/01/1900)");
+        System.out.println("Data escolhida: "+ teste1);
+        System.out.println("Dias Passados = " + teste1.contaDias());
         
     }
 
