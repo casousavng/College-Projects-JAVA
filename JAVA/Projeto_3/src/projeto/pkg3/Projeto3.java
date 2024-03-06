@@ -19,6 +19,19 @@ public class Projeto3 {
         System.out.println("Data escolhida: "+ teste1);
         System.out.println("Dias Passados = " + teste1.contaDias());
         
+                Data nova = new Data (2022, 3 , 15 ,false);
+                Data outro = new Data();
+                
+                //Data novo = (Data)nova.clone();
+                
+                //String dataSistema = outro.getDataSistema(); // atribuir data Sistema
+                //System.out.println(novo);
+                
+                //System.out.println(dataSistema.equals(novo)); // verificar se são iguais as datas
+                Data novaData = new Data(nova);
+                System.out.println(novaData);
+                System.out.println("Dias passados: " + nova.contaDias());
+        
     }
 
 }
