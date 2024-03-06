@@ -45,35 +45,50 @@ public class Data {
         this.dia = dia;
     }
     
+   public int bisexto  (int ano){
+        if(((ano % 400 == 0) || ((ano % 4 == 0)) && (ano % 100 != 0))){
+            return 29;
+        }
+        else{
+            return 28;
+        }           
+    }
+    
     public int diasDoMes (int mes, int ano){
         
-        int dias = 0;
+        int dias;
         
-        switch (mes) {
-            case 0:
-                dias = 0;
-                break;
-            case 2:
-                if((ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0))){
-                    dias = 29;
-                }
-		
-                else{
-                    dias = 28;
-                    }
-		
-                
-                break;
-            case 1, 3, 5, 7, 8, 10, 12:
-                dias = 31;
-                break;
-            default:
-                dias = 30;
-                break;
+        dias = switch (mes) {
+            case 2 -> bisexto(ano);
+            case 1, 3, 5, 7, 8, 10, 12 -> 31;
+            default -> 30;
         };
         return dias;
-
     }
+    
+    
+        public int contaDias(){
+        
+        int contaDias, anos = 0, meses = 0;
+        
+        for (int i = 1900; i <= (this.ano-1); i++) // conta os anos ate ao ano anterior ao pedido e soma os dias todos
+            if (bisexto(i) == 29){
+                anos += 366;
+            }
+            else{
+                anos += 365;
+            }
+        
+        for (int i = this.mes; i > 1; i--){ // conta os meses até ao mes anterior e soma os dias dos meses
+            meses += diasDoMes(i, this.ano);
+        }
+        
+        contaDias = anos + meses + (this.dia); 
+
+        return contaDias;
+    }
+        
+    /*
     
     // Método para retornar o número de dias desde a data de referência 01/01/1900
     public int contaDias(){
@@ -103,6 +118,7 @@ public class Data {
 
         return contaDias;
     }
+*/
 
     @Override
     public String toString() {
